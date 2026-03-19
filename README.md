@@ -6,7 +6,7 @@ The Retail Forecasting System is a machine learning-based web application that p
 
 ## Team Members
 - Ayesha Khalid (23L-0667)
-- - Uma E Rubab (23L-0667)
+- Uma E Rubab (23L-0928)
 
 ## Tech Stack
 - Backend: Python (Flask)
