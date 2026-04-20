@@ -1,47 +1,52 @@
-# Retail-IQ
-# Retail Forecasting System
+# Retail-IQ: Professional Retail Forecasting System
 
-## Description
-The Retail Forecasting System is a machine learning-based web application that predicts future sales using historical retail data. It uses models like XGBoost for accurate forecasting and is deployed using Flask to provide real-time predictions through a user-friendly interface.
+## 📌 Overview
 
-## Team Members
-- Ayesha Khalid (23L-0667)
-- Uma E Rubab (23L-0928)
+Retail-IQ = ML sales forecast system. Modular architecture handle big time-series data, feature engineering, auto reports.
 
-## Tech Stack
-- Backend: Python (Flask)
-- Frontend: HTML, CSS, Bootstrap
-- Machine Learning: Scikit-learn, XGBoost
-- Database: SQL Server / MySQL
-- Tools: Pandas, NumPy, Matplotlib
+## 📂 Project Structure
 
-## Project Structure
-- `data/` → Raw and processed datasets  
-- `notebooks/` → EDA and model training notebooks  
-- `ml/` → ML scripts and trained model  
-- `app/` → Flask web application  
-- `database/` → SQL scripts  
-- `docs/` → Report and iteration documents  
-
-## How to Run
-
-### 1. Clone Repository
-```bash
-git clone https://github.com/aayeshh/Retail-IQ
-cd Retail-Forecasting-System
+```
+Retail-IQ/
+├── data/
+│   ├── raw/                # Unmodified input CSVs
+│   └── processed/          # Cleaned and featured datasets
+├── docs/                   # Project documentation and reports
+├── notebooks/              # Jupyter notebooks for experimentation
+├── outputs/
+│   ├── figures/            # Generated plots and visualizations
+│   ├── models/             # Serialized model files (.pkl, .json)
+│   └── logs/               # Processing and error logs
+├── src/
+│   └── retail_iq/          # Core Python package
+│       ├── config.py       # Centralized path and config management
+│       ├── preprocessing.py # Data loading and cleaning
+│       ├── features.py      # Feature engineering logic
+│       └── visualization.py # Plotting utilities
+├── tests/                  # Unit and integration tests
+├── pyproject.toml          # Project metadata and dependencies
+└── requirements.txt        # Legacy dependency list
 ```
 
-### 2. Install Dependencies
+## 🚀 Getting Started
+
+### 1. Setup Environment
+
 ```bash
-pip install -r requirements.txt
+# Using uv (recommended)
+uv venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+uv pip install -e .
 ```
 
-### 3. Run the Application
-```bash
-python run.py
-```
+### 2. Run Analysis
 
-### 4. Open in Browser
-```bash
-http://127.0.0.1:5000/
-```
+Open `notebooks/eda.ipynb`, run all cells, generate EDA reports.
+
+## 🛠 Tech Stack
+
+- **ML**: Scikit-learn, XGBoost, Statsmodels
+- **Data**: Pandas, NumPy
+- **Visuals**: Matplotlib, Seaborn
+- **API**: Flask
+- **DevOps**: Pathlib (robust paths), Setuptools (package mgmt)

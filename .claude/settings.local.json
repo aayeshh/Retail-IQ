@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/mypc/.claude/plugins/cache/caveman/caveman/84cc3c14fa1e/skills/compress/**)",
+      "Bash(python3 -m scripts \"C:\\\\Users\\\\mypc\\\\Downloads\\\\Retail-IQ\\\\docs\\\\slides.md\")",
+      "Bash(set PYTHONIOENCODING=utf-8)",
+      "Bash(python3 -m scripts \"C:\\\\Users\\\\mypc\\\\Downloads\\\\Retail-IQ\\\\REFLECTIONS.md\")",
+      "Bash(python3 -m scripts \"C:\\\\Users\\\\mypc\\\\Downloads\\\\Retail-IQ\\\\docs\\\\project_summary.md\")",
+      "Bash(python3 -m scripts \"C:\\\\Users\\\\mypc\\\\Downloads\\\\Retail-IQ\\\\docs\\\\Methodology.md\")",
+      "Bash(python3 -m scripts \"C:\\\\Users\\\\mypc\\\\Downloads\\\\Retail-IQ\\\\docs\\\\Paper_Division.md\")",
+      "Bash(python3 -m scripts \"C:\\\\Users\\\\mypc\\\\Downloads\\\\Retail-IQ\\\\docs\\\\Smart_Retail_Demand_Forecasting_Roadmap.md\")"
+    ]
+  }
+}
