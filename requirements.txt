@@ -6,3 +6,10 @@ scikit-learn
 statsmodels
 lightgbm 
 xgboost
+pickle
+
+backend:
+flask 
+pymongo 
+flask-cors 
+python-dotenv 
