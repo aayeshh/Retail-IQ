@@ -1,0 +1,137 @@
+.sales-trend-page .trend-header-card {
+  background: linear-gradient(135deg, #131c43 0%, #274193 100%);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+.sales-trend-page .trend-header-card h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.sales-trend-page .trend-header-card h1 span {
+  color: #f7be4c;
+}
+
+.sales-trend-page .trend-header-card .subtitle {
+  margin: 4px 0 0;
+  color: #d9e3ff;
+  font-size: 14px;
+}
+
+.sales-trend-page .trend-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.sales-trend-page .trend-toolbar select {
+  border: 1px solid #d0d7ea;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.sales-trend-page .line-chart-card {
+  background: #fff;
+  border: 1px solid #dde3f1;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(16, 30, 86, 0.08);
+}
+
+.sales-trend-page .stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.sales-trend-page .stat-grid article {
+  background: #f7f9ff;
+  border: 1px solid #e4e9f7;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.sales-trend-page .stat-grid p {
+  margin: 0;
+  color: #60709a;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.sales-trend-page .stat-grid h4 {
+  margin: 6px 0 0;
+  color: #18234d;
+  font-size: 20px;
+}
+
+.sales-trend-page .line-chart-card h3 {
+  margin: 0 0 12px;
+  color: #151c3c;
+}
+
+.sales-trend-page .line-chart-card svg {
+  width: 100%;
+  min-height: 240px;
+  background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%);
+  border-radius: 10px;
+  border: 1px solid #e2e8f5;
+}
+
+.sales-trend-page .line-chart-card polyline {
+  fill: none;
+  stroke: #f4b12d;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.sales-trend-page .summary-text {
+  margin: 12px 0;
+  color: #2b355f;
+}
+
+.sales-trend-page .trend-table-wrap {
+  overflow: auto;
+  border: 1px solid #e1e6f2;
+  border-radius: 10px;
+}
+
+.sales-trend-page .trend-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sales-trend-page .trend-table-wrap th,
+.sales-trend-page .trend-table-wrap td {
+  padding: 10px 12px;
+  text-align: left;
+  border-top: 1px solid #edf1f8;
+}
+
+.sales-trend-page .state-message {
+  color: #49557c;
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .sales-trend-page .line-chart-card svg {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 760px) {
+  .sales-trend-page .trend-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sales-trend-page .stat-grid {
+    grid-template-columns: 1fr;
+  }
+}

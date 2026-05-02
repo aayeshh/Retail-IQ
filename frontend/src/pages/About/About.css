@@ -1,0 +1,96 @@
+.help-page .left-menu .active-help {
+  color: #f4b12d;
+}
+
+.help-page .guide-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.help-page .guide-card {
+  background: #f8f8fb;
+  border: 1px solid #dadce5;
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+.help-page .guide-card .step {
+  display: inline-block;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #5e6270;
+  background: #f3f1ec;
+  border-radius: 8px;
+  padding: 3px 8px;
+}
+
+.help-page .guide-card h3 {
+  margin: 10px 0 4px;
+  font-size: 18px;
+  color: #18204a;
+}
+
+.help-page .guide-card p {
+  margin: 0;
+  color: #7f8392;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.help-page .help-panels {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.help-page .faq-panel,
+.help-page .support-panel {
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+.help-page .faq-panel {
+  background: #f4f2ee;
+}
+
+.help-page .support-panel {
+  background: #151938;
+  color: #e8ebff;
+}
+
+.help-page .faq-panel h2,
+.help-page .support-panel h2 {
+  margin: 0 0 12px;
+  font-size: 24px;
+}
+
+.help-page .faq-panel h2 span {
+  color: #dca63a;
+}
+
+.help-page .faq-item {
+  border-top: 1px solid #d8d6ce;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.help-page .faq-item h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #1d254a;
+}
+
+.help-page .faq-item p {
+  margin: 4px 0 0;
+  color: #7f8290;
+  font-size: 14px;
+}
+
+.help-page .support-panel p {
+  margin: 8px 0;
+  font-size: 14px;
+}

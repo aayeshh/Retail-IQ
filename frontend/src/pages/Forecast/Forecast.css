@@ -1,0 +1,141 @@
+.forecast-page .forecast-card {
+  background: #f8f8fb;
+  border: 1px solid #dde0ec;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 24px rgba(20, 28, 64, 0.06);
+}
+
+.forecast-page .forecast-form-card h3 {
+  margin: 0 0 14px;
+  color: #18204a;
+  font-size: 24px;
+}
+
+.forecast-page .forecast-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.forecast-page label {
+  display: grid;
+  gap: 6px;
+  color: #2f3558;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.forecast-page input,
+.forecast-page select {
+  border: 1px solid #cdd3e8;
+  border-radius: 10px;
+  padding: 11px 12px;
+  font-size: 14px;
+  color: #20284e;
+  background: #fff;
+}
+
+.forecast-page button {
+  margin-top: 16px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f2b130, #f1a01f);
+  color: #141c40;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 11px 16px;
+}
+
+.forecast-page button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.forecast-page .forecast-error {
+  color: #912020;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.forecast-page .forecast-result-card {
+  margin-top: 16px;
+  border-left: 6px solid #4f69ff;
+}
+
+.forecast-page .result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.forecast-page .forecast-result-card h3 {
+  margin: 0;
+  color: #18204a;
+  font-size: 28px;
+}
+
+.forecast-page .result-chip {
+  background: #e7ecff;
+  color: #16255f;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.forecast-page .forecast-result-card .hint {
+  margin: 10px 0 0;
+  color: #3b4470;
+  font-size: 16px;
+}
+
+.forecast-page .forecast-result-card .sub-hint {
+  margin-top: 10px;
+  color: #5f6480;
+  font-size: 13px;
+}
+
+.forecast-page .result-metrics {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #dbe0f1;
+  color: #2f3558;
+  font-size: 14px;
+}
+
+.forecast-page .result-metrics p {
+  margin: 5px 0;
+}
+
+.forecast-page .forecast-result-card.very-low {
+  border-left-color: #9b1c1c;
+}
+
+.forecast-page .forecast-result-card.low {
+  border-left-color: #d97706;
+}
+
+.forecast-page .forecast-result-card.moderate {
+  border-left-color: #2563eb;
+}
+
+.forecast-page .forecast-result-card.good {
+  border-left-color: #059669;
+}
+
+.forecast-page .forecast-result-card.high {
+  border-left-color: #047857;
+}
+
+@media (max-width: 900px) {
+  .forecast-page .forecast-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-page .result-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

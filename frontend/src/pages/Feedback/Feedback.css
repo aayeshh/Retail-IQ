@@ -1,0 +1,15 @@
+.feedback-page .active-side { color:#f4b12d; border:1px solid #f0d7a1; border-radius:10px; padding:6px 10px; }
+.feedback-page .fb-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+.feedback-page .fb-grid article { background:#f8f8fb; border-radius:14px; box-shadow:0 8px 20px rgba(0,0,0,0.08); padding:16px; min-height:240px; }
+.feedback-page .fb-grid h3 { margin:0 0 12px; font-size:18px; color:#131b40; line-height:1.2; }
+.feedback-page .fb-grid p { margin:0; font-size:24px; }
+.feedback-page .fb-grid small { font-size:14px; color:#59607a; }
+.feedback-page input { width:100%; border:1px solid #cfd4e5; border-radius:10px; font-size:14px; padding:8px 10px; margin-bottom:8px; }
+.feedback-page textarea { width:100%; min-height:100px; border:2px solid #121a3f; border-radius:10px; font-size:16px; padding:10px; resize:vertical; }
+.feedback-page input[type="range"] { width:100%; margin-top:10px; }
+.feedback-page .light { font-size:14px !important; background:#fff; border-radius:10px; padding:12px; color:#2f3558; }
+.feedback-page .feedback-toast { margin:12px 0 0; padding:10px 12px; border-radius:10px; font-size:14px; font-weight:600; }
+.feedback-page .feedback-toast.success { background:#e8f7ec; color:#146b35; border:1px solid #b7e3c2; }
+.feedback-page .feedback-toast.error { background:#ffeaea; color:#8a1e1e; border:1px solid #f3b3b3; }
+.feedback-page .fb-actions { margin-top:14px; display:flex; justify-content:flex-end; }
+.feedback-page .fb-actions button { border:0; border-radius:10px; background:#f2b130; color:#141c40; font-size:18px; font-weight:700; padding:10px 20px; }

@@ -1,0 +1,73 @@
+.announcements-page .notice-list {
+  margin-top: 22px;
+  display: grid;
+  gap: 18px;
+}
+
+.announcements-page .notice-item {
+  background: #f8f8fb;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.announcements-page .badge-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.announcements-page .badge-icon.orange {
+  background: #f8b38d;
+}
+
+.announcements-page .badge-icon.green {
+  background: #65a86f;
+}
+
+.announcements-page .badge-icon.gray {
+  background: #cbcbce;
+}
+
+.announcements-page .notice-text h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  color: #10183d;
+}
+
+.announcements-page .notice-text p {
+  margin: 0;
+  color: #8a8e9a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.announcements-page .type-badge {
+  align-self: start;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.announcements-page .orange-tag {
+  background: #f4b28f;
+  color: #64321b;
+}
+
+.announcements-page .green-tag {
+  background: #6aad75;
+  color: #143819;
+}
+
+.announcements-page .gray-tag {
+  background: #bcbcc0;
+  color: #35363d;
+}
