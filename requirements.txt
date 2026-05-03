@@ -13,3 +13,6 @@ flask
 pymongo 
 flask-cors 
 python-dotenv 
+
+frontend:
+npm start
