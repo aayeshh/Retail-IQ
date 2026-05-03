@@ -5,13 +5,19 @@ forecast_bp = Blueprint('forecast', __name__)
 
 @forecast_bp.route('/predict', methods=['POST'])
 def get_prediction():
-    data = request.get_json()
-    
+    data = request.get_json(silent=True)
+
+    if not data or not isinstance(data, dict):
+        return jsonify({"success": False, "error": "Invalid or missing JSON payload."}), 400
+
     # Validate required fields
     required_fields = ['store_nbr', 'family', 'onpromotion']
     for field in required_fields:
         if field not in data:
-            return jsonify({"error": f"Missing required field: {field}"}), 400
+            return jsonify({"success": False, "error": f"Missing required field: {field}"}), 400
+
+    if not callable(predict):
+        return jsonify({"success": False, "error": "Forecast prediction function is unavailable."}), 500
 
     try:
         # predict() now returns a dictionary with detailed information
@@ -44,7 +50,9 @@ def get_prediction():
         }), 400
         
     except Exception as e:
+        import traceback
         return jsonify({
-            "success": False, 
-            "error": f"Internal server error: {str(e)}"
+            "success": False,
+            "error": f"Internal server error: {str(e)}",
+            "traceback": traceback.format_exc()
         }), 500

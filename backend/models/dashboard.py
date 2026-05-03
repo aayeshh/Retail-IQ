@@ -1,7 +1,15 @@
+import time
 from models.analytics import get_top_products
 
+_dashboard_cache = None
+_dashboard_cache_at = 0
 
-def get_dashboard_data(db):
+
+def get_dashboard_data(db, cache_ttl=30):
+    global _dashboard_cache, _dashboard_cache_at
+
+    if _dashboard_cache is not None and time.time() - _dashboard_cache_at < cache_ttl:
+        return _dashboard_cache
 
     # 📊 TOTAL SALES
     total_sales = list(db.sales.aggregate([
@@ -12,6 +20,9 @@ def get_dashboard_data(db):
 
     # 📦 TOTAL PRODUCTS
     total_products = db.products.count_documents({})
+    if total_products == 0:
+        # Fall back to distinct sold product IDs when the catalog collection is empty.
+        total_products = len(db.sales.distinct("product_id"))
 
     # 💬 FEEDBACK STATS
     feedback_stats = list(db.feedback.aggregate([

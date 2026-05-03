@@ -16,13 +16,18 @@ def get_top_products(db, limit=5):
             }
         },
         {
-            "$unwind": "$product_info"
+            "$unwind": {
+                "path": "$product_info",
+                "preserveNullAndEmptyArrays": True
+            }
         },
         {
             "$project": {
                 "_id": 0,
                 "product_id": "$_id",
-                "name": "$product_info.name",
+                "name": {
+                    "$ifNull": ["$product_info.name", {"$toString": "$_id"}]
+                },
                 "family": "$product_info.family",
                 "total_sales": 1
             }
