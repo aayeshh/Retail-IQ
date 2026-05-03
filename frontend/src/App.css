@@ -105,6 +105,12 @@ a {
   line-height: 1.7;
 }
 
+.small-info {
+  color: #5a6a8f;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
 .inner-page {
   min-height: 100vh;
   background: #efeee9;

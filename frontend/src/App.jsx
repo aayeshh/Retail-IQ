@@ -19,7 +19,15 @@ import TopProducts from "./pages/TopProducts/TopProducts";
 function AppContent() {
   const [user, setUser] = useState(() => {
     const saved = localStorage.getItem("retailiq_user");
-    return saved ? JSON.parse(saved) : null;
+    if (!saved) {
+      return null;
+    }
+    try {
+      return JSON.parse(saved);
+    } catch {
+      localStorage.removeItem("retailiq_user");
+      return null;
+    }
   });
 
   const isAuthenticated = Boolean(user);
@@ -58,13 +66,13 @@ function AppContent() {
       <header className="site-header">
         <div className="brand">RetailIQ</div>
         <nav className="site-nav" aria-label="Main navigation">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About Us</NavLink>
-          <NavLink to="/contact">Contact Us</NavLink>
-          {!isAuthenticated && <NavLink to="/login">Login</NavLink>}
+          <NavLink to="/" end>Home</NavLink>
+          <NavLink to="/about" end>About Us</NavLink>
+          <NavLink to="/contact" end>Contact Us</NavLink>
+          {!isAuthenticated && <NavLink to="/login" end>Login</NavLink>}
           {isAuthenticated &&
             privateLinks.map((link) => (
-              <NavLink key={link.to} to={link.to}>
+              <NavLink key={link.to} to={link.to} end>
                 {link.label}
               </NavLink>
             ))}

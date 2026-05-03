@@ -20,7 +20,7 @@ function PageLayout({ children, contentClassName = "", showSidebar = true }) {
         {showSidebar && (
           <aside className="left-menu" aria-label="Page navigation">
             {sideLinks.map((link) => (
-              <NavLink key={link.to} to={link.to}>
+              <NavLink key={link.to} to={link.to} end>
                 {link.label}
               </NavLink>
             ))}

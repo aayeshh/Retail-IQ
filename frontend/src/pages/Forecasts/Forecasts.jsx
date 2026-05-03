@@ -3,24 +3,60 @@ import "./Forecasts.css";
 import PageLayout from "../../components/PageLayout/PageLayout";
 import { apiRequest } from "../../api/client";
 
+const DASHBOARD_CACHE_KEY = "retailiq_dashboard_overview_cache";
+
+function loadCachedDashboard() {
+  try {
+    const cached = localStorage.getItem(DASHBOARD_CACHE_KEY);
+    return cached ? JSON.parse(cached) : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveCachedDashboard(data) {
+  try {
+    localStorage.setItem(DASHBOARD_CACHE_KEY, JSON.stringify(data));
+  } catch {
+    // Ignore storage failures.
+  }
+}
+
 function Forecasts() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const cachedData = loadCachedDashboard();
+  const [data, setData] = useState(cachedData);
+  const [loading, setLoading] = useState(!cachedData);
+  const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
+    let isMounted = true;
+
     async function loadDashboard() {
+      if (cachedData) {
+        setRefreshing(true);
+      }
+
       try {
         const result = await apiRequest("/api/dashboard/overview");
+        if (!isMounted) return;
         setData(result);
+        saveCachedDashboard(result);
       } catch (err) {
+        if (!isMounted) return;
         setError(err.message || "Failed to load dashboard data");
       } finally {
+        if (!isMounted) return;
         setLoading(false);
+        setRefreshing(false);
       }
     }
+
     loadDashboard();
-  }, []);
+    return () => {
+      isMounted = false;
+    };
+  }, [cachedData]);
 
   const totalSales = data?.total_sales ?? 0;
   const totalProducts = data?.total_products ?? 0;
@@ -38,6 +74,7 @@ function Forecasts() {
       </h1>
       <p className="subtitle">Smart Retail Forecasting - Weekly Snapshot</p>
       {loading && <p>Loading dashboard data...</p>}
+      {!loading && refreshing && <p className="small-info">Showing cached dashboard data while refreshing...</p>}
       {error && <p>{error}</p>}
 
       <div className="stats-grid">

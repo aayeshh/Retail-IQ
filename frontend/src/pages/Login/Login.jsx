@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import PageLayout from "../../components/PageLayout/PageLayout";
 import { apiRequest } from "../../api/client";
+import { saveCache } from "../../utils/cache";
 
 function Login({ onLoginSuccess }) {
   const navigate = useNavigate();
@@ -31,7 +32,32 @@ function Login({ onLoginSuccess }) {
         text: `${result.message}. Welcome ${result.user?.full_name || ""}`.trim(),
         type: "success",
       });
+
+      try {
+        const dashboardData = await apiRequest("/api/dashboard/overview");
+        saveCache("retailiq_dashboard_overview_cache", dashboardData);
+      } catch {
+        // Prefetch failed; dashboard will still load normally.
+      }
+
       navigate("/dashboard");
+
+      const backgroundPrefetch = async () => {
+        try {
+          const [topProducts, recommendations, salesTrend] = await Promise.all([
+            apiRequest("/api/top-products"),
+            apiRequest("/api/recommendations"),
+            apiRequest("/api/sales-trend?interval=monthly"),
+          ]);
+          saveCache("retailiq_top_products_cache", topProducts);
+          saveCache("retailiq_recommendations_cache", recommendations);
+          saveCache("retailiq_sales_trend_cache_monthly", salesTrend);
+        } catch {
+          // No action needed if prefetch fails.
+        }
+      };
+
+      void backgroundPrefetch();
     } catch (err) {
       setStatus({ text: err.message || "Login failed", type: "error" });
     } finally {
