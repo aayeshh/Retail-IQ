@@ -97,7 +97,7 @@ A built-in documentation page covering all major platform features, making onboa
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/retailiq.git
+git clone https://github.com/aayeshh/retailiq.git
 cd retailiq
 ```
 
